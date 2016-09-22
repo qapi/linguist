@@ -300,6 +300,7 @@ module Linguist
       end
 
       @ace_mode = attributes[:ace_mode]
+      @codemirror_mode = attributes[:codemirror_mode]
       @wrap = attributes[:wrap] || false
 
       # Set legacy search term
@@ -396,6 +397,17 @@ module Linguist
     #
     # Returns a String name or nil
     attr_reader :ace_mode
+
+    # Public: Get Codemirror mode
+    #
+    # Examples
+    #
+    #  # => "nil"
+    #  # => "javascript"
+    #  # => "clike"
+    #
+    # Returns a String name or nil
+    attr_reader :codemirror_mode
 
     # Public: Should language lines be wrapped
     #
@@ -573,6 +585,7 @@ module Linguist
       :aliases           => options['aliases'],
       :tm_scope          => options['tm_scope'],
       :ace_mode          => options['ace_mode'],
+      :codemirror_mode   => options['codemirror_mode'],
       :wrap              => options['wrap'],
       :group_name        => options['group'],
       :searchable        => options.fetch('searchable', true),
